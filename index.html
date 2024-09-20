@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МЯУ черт возьми</title>
+    <script type="text/javascript">
+        function Gaga(event) {
+            event.preventDefault();
+            var N = parseFloat(document.getElementById("N").value); // Получаем значение из поля ввода
+            var s = 0;
+            if (N <= 0 || N > 2) {
+                alert("0<x<=2");
+                return;
+            }
+            for (var n = 0; n <= 2; n++) {
+                var x = N;
+                s += (((-1) ** n) * ((x - 1) ** (n + 1))) / (n + 1);
+            }
+            alert(s);
+        }
+    </script>
+</head>
+<body>
+    <p>ln x = (((-1)**n) * ((x-1)**(n+1)))/(n+1)</p>
+    <form id="frm">
+        <input type="text" id="N" placeholder="0<x<=2">
+        <input type="submit" value="Отправить" onclick="Gaga(event)">
+    </form>
+</body>
+</html>
